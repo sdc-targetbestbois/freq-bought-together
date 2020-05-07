@@ -2,7 +2,7 @@ const express = require('express');
 const path = require("path");
 const bodyParser = require("body-parser");
 const port = 4000;
-const { getItems } = require('../database/query');
+const { getItems, getThisItem } = require('../database/query');
 
 const app = express();
 
@@ -12,6 +12,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/items', (req, res) => {
   getItems((err, data) => {
+    if (err) {
+      console.log('problem getting all items from server');
+      res.sendStatus(500);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.get('/api/firstItem', (req, res) => {
+  getThisItem((err, data) => {
     if (err) {
       console.log('problem getting all items from server');
       res.sendStatus(500);
