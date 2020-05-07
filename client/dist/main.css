@@ -1,0 +1,455 @@
+.mainContainer {
+
+  display: inline-block;
+  width: 1120px;
+  height: 500px;
+  /* border: solid; */
+  /* background: magenta; */
+  position:relative;
+}
+
+.recommendedContainer {
+
+  display: inline-block;
+  width: 1362px;
+  height: 568px;
+  /* border: solid; */
+  /* background: magenta; */
+  position:relative;
+}
+
+.thisItem {
+  width: 27.4%;
+  height: 80%;
+  /* background: blue; */
+  float: left;
+  border-right: 1px solid rgb(214,214,214);
+  border-bottom: 1px solid rgb(214,214,214);
+}
+
+.frequentlyBoughtTogether {
+  height: 80%;
+  width: 72.5%;
+  float: right;
+  /* background: red; */
+  border-bottom: 1px solid rgb(214,214,214);
+}
+
+.subtotal {
+  height: 20%;
+  /* background: yellow; */
+  float: right;
+  width: 39%;
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+.subtotalDollarAmt {
+  width: 50%;
+  float:left;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.button {
+  background-color:rgb(204,0,0); /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+.addAllToCart {
+  width: 40%;
+  margin-right: 45px;
+  border-radius: 5px;
+  float: right;
+}
+
+.thisItemTitle {
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
+.frequentlyBoughtTogetherTitle {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.productCost {
+  text-align: center;
+}
+
+.productCostFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+.productName {
+  text-align: center;
+}
+
+.productNameFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+
+.checkboxDiv {
+  text-align: center;
+}
+
+.checkboxDivFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+
+#itemInfoContainer {
+  
+  /* background-color: teal; */
+  width: 100%;
+  height: 81.2%; 
+}
+
+/* #itemInfoFrequentlyBoughtTogetherContainer {
+  width: 33.3%;
+  height: 10%;
+  background-color: greenyellow;
+  float: left;
+} */
+
+.itemInfoFrequentlyBoughtTogether1 {
+  height: 81%;
+  width: 33.333333%;
+  /* background-color: greenyellow; */
+  float: left;
+}
+
+.itemInfoFrequentlyBoughtTogether2 {
+  height: 81%;
+  width: 33.3333%;
+  /* background-color: pink; */
+  float: left;
+}
+
+.itemInfoFrequentlyBoughtTogether3 {
+  height: 81%;
+  width: 33.33333%;
+  /* background: powderblue; */
+  float: left;
+}
+
+#componentContainer {
+
+  /* background-color: orange; */
+
+  height: 75%;
+  width: 15%;
+}
+
+.productImageDiv {
+
+  /* background-color: blue; */
+  height: 72%;
+  width: 72%;
+  margin: 0 auto;
+
+  /* margin: 2.5% 0 0 5%; */
+}
+
+.productImageDivFrequentlyBoughtTogether {
+
+  /* background-color: cyan; */
+  height: 230px;
+  width: 78%;
+  margin: 0 auto;
+
+  /* margin: 2.5% 0 0 5%; */
+}
+
+
+#productImage {
+  text-align: center;
+  height: 95%;
+  width: 95%;
+
+  margin: 2.5% 0 0 2.5%;
+}
+
+#productImageFrequentlyBoughtTogether {
+  text-align: center;
+  height: 95%;
+  width: 95%;
+
+  margin: 2.5% 0 0 2.5%;
+}
+
+
+
+.moreToConsiderTitle {
+  float: left;
+  width: 200px;
+}
+
+.guestsUltimatelyBoughtTitle {
+  float: left;
+  width: 200px;
+}
+
+.guestsAlsoBoughtTitle {
+  float: left;
+  width: 200px;
+}
+
+.threeOptionsBarText {
+  margin: 0px 385px;
+  width: 750px;
+}
+
+.threeOptionsBar{
+  height: 20px;
+  /* background-color: pink; */
+  border-bottom: 1px solid rgb(136,136,136);
+}
+
+
+
+
+
+menu, ol, ul, li a {
+  padding: 0;
+  list-style: none;
+  color: #666666;
+
+}
+
+.selectedTab {
+  border-bottom: 3px solid rgb(204,0,0);
+}
+
+.itemContainerHolder {
+  height: 270px;
+  width: 1362px;
+}
+
+#itemInfoContainer {
+  width: 227px;
+  height: 267px; 
+}
+.itemInfoDiv1 {
+float: left;
+}
+
+.itemInfoDiv2 {
+  float: left;
+}
+.itemInfoDiv3 {
+  float: left;
+}
+.itemInfoDiv4 {
+  float: left;
+}
+.itemInfoDiv5 {
+  float: left;
+}
+.itemInfoDiv6 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv1 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv2 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv3 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv4 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv5 {
+  float: left;
+}
+
+.itemInfoUltimatelyBoughtDiv6 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv1 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv2 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv3 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv4 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv5 {
+  float: left;
+}
+
+.itemInfoGuestsAlsoBoughtDiv6 {
+  float: left;
+}
+
+.showMoreBtnContainer {
+  height: 48px;
+  width: 1362px;
+  /* border-bottom: 1px solid rgb(136,136,136); */
+  /* background-color: brown; */
+}
+
+.showMoreBtn {
+  width: 139px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.bottomOfBtnSpacer {
+  width: 1362px;
+  height: 20px;
+  border-bottom: 1px solid rgb(136,136,136);
+}
+
+.inner {
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.frequentlyBoughtTogetherTitle {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.productCost {
+  text-align: center;
+}
+
+.productCostFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+.productName {
+  text-align: center;
+}
+
+.productNameFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+
+.checkboxDiv {
+  text-align: center;
+}
+
+.checkboxDivFrequentlyBoughtTogether {
+  text-align: center;
+}
+
+
+
+
+/* #itemInfoFrequentlyBoughtTogetherContainer {
+  width: 33.3%;
+  height: 10%;
+  background-color: greenyellow;
+  float: left;
+} */
+
+.itemInfoFrequentlyBoughtTogether1 {
+  height: 81%;
+  width: 33.333333%;
+  /* background-color: greenyellow; */
+  float: left;
+}
+
+.itemInfoFrequentlyBoughtTogether2 {
+  height: 81%;
+  width: 33.3333%;
+  /* background-color: pink; */
+  float: left;
+}
+
+.itemInfoFrequentlyBoughtTogether3 {
+  height: 81%;
+  width: 33.33333%;
+  /* background: powderblue; */
+  float: left;
+}
+
+#componentContainer {
+
+  /* background-color: orange; */
+
+  height: 75%;
+  width: 15%;
+}
+
+.productImageDiv {
+
+  /* background-color: blue; */
+  height: 72%;
+  width: 72%;
+  margin: 0 auto;
+
+  /* margin: 2.5% 0 0 5%; */
+}
+
+.productImageDivFrequentlyBoughtTogether {
+
+  /* background-color: cyan; */
+  height: 230px;
+  width: 78%;
+  margin: 0 auto;
+
+  /* margin: 2.5% 0 0 5%; */
+}
+
+
+#productImage {
+  text-align: center;
+  height: 95%;
+  width: 95%;
+
+  margin: 2.5% 0 0 2.5%;
+}

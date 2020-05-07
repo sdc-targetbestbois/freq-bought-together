@@ -12,9 +12,9 @@ connection.connect(err => {
 });
 
 const getItems = (callback) => {
-  connection.query('SELECT * FROM items', (err, items) => {
+  connection.query('SELECT * FROM products', (err, items) => {
     if (err) {
-      console.log('problem querying for items');
+      console.log('problem querying for products');
       callback(err, null);
     } else {
       callback(null, items);

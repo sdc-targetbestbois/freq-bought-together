@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+const axios = require('axios');
 
 
 export default class ItemInfo extends Component {
@@ -11,6 +11,24 @@ export default class ItemInfo extends Component {
       cost: "costGoesHere"
     };
   }
+
+
+  componentDidMount() {
+    axios.get('/api/firstItem')
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
+  }
+
+
   render() {
     return (
       
