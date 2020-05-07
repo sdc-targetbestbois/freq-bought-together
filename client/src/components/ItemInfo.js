@@ -8,16 +8,29 @@ export default class ItemInfo extends Component {
     this.state = {
       headerOne: "Frequently bought together",
       productName: "productName",
-      cost: "costGoesHere"
+      cost: "costGoesHere",
+      imageLink: ""
     };
+    this.getFirstItem = this.getFirstItem.bind(this);
   }
 
 
   componentDidMount() {
+    this.getFirstItem();
+  }
+
+
+
+   getFirstItem(){
     axios.get('/api/firstItem')
-    .then(function (response) {
+    .then((response) => {
       // handle success
-      console.log(response);
+      this.setState({
+        productName: response.data[0].itemName,
+        imageLink: response.data[0].imageLink,
+        cost: response.data[0].price
+      })
+      console.log(response.data[0].imageLink);
     })
     .catch(function (error) {
       // handle error
@@ -26,16 +39,17 @@ export default class ItemInfo extends Component {
     .then(function () {
       // always executed
     });
-  }
+   }
+
 
 
   render() {
     return (
       
       <div id="itemInfoContainer">
-          <div className="productImageDiv"><img id="productImage" src='/images/catspawmain.jpg' className="productImagePic" /></div>
-        <div className="productCost"><b>$14.00</b></div>
-        <div className="productName">One silver dagger</div>
+          <div className="productImageDiv"><img id="productImage" src={this.state.imageLink} className="productImagePic" /></div>
+        <div className="productCost"><b>{this.state.cost} stirling</b></div>
+        <div className="productName">{this.state.productName}</div>
         <br></br>
         <div className="checkboxDiv"><input type="checkbox" className="itemCheckbox"></input></div>
       </div>

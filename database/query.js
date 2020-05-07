@@ -11,8 +11,19 @@ connection.connect(err => {
   }
 });
 
+const getThisItem = (callback) => {
+  connection.query('SELECT * FROM items WHERE id=1', (err, items) => {
+    if (err) {
+      console.log('problem querying for products');
+      callback(err, null);
+    } else {
+      callback(null, items);
+    }
+  });
+};
+
 const getItems = (callback) => {
-  connection.query('SELECT * FROM products', (err, items) => {
+  connection.query('SELECT * FROM items', (err, items) => {
     if (err) {
       console.log('problem querying for products');
       callback(err, null);
@@ -26,7 +37,7 @@ const getItems = (callback) => {
 //***************************
 // Add new functions as needed
 //***************************
-module.exports = { getItems };
+module.exports = { getThisItem, getItems };
 
 
 // const mongoose = require('mongoose');
