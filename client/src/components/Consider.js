@@ -3,16 +3,7 @@ import ItemInfo from '../components/ItemInfo';
 import ItemInfoRecommended from '../components/ItemInfoRecommended';
 
 
-export default class Consider extends Component {
-  constructor() {
-    super();
-    this.state = {
-      headerOne: "Frequently bought together",
-      productName: "productName",
-      cost: "costGoesHere"
-    };
-  }
-  render() {
+export default function Consider() {
     return (
         <div>
               <div className="itemInfoDiv1"><ItemInfoRecommended /></div>
@@ -24,7 +15,6 @@ export default class Consider extends Component {
         </div>
     );
   }
-}
 
 
 

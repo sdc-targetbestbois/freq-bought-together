@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 
 
-export default class ItemInfo extends Component {
-  constructor() {
-    super();
-    this.state = {
-      headerOne: "Frequently bought together",
-      productName: "productName",
-      cost: "costGoesHere"
-    };
-  }
-  render() {
+export default function ItemInfo() {
     return (
       
       <div id="itemInfoContainer">
@@ -22,4 +13,3 @@ export default class ItemInfo extends Component {
       </div>
     );
   }
-}

@@ -4,6 +4,7 @@ import ItemInfoFrequentlyBoughtTogether from "../../client/src/components/ItemIn
 import Consider from "./components/Consider";
 import UltimatelyBought from "./components/UltimatelyBought";
 import GuestsAlsoBought from "./components/GuestsAlsoBought";
+const axios = require('axios');
 
 
 export default class App extends Component {
@@ -13,14 +14,51 @@ export default class App extends Component {
       headerOne: "Frequently bought together",
       productName: "productName",
       cost: "costGoesHere",
-      tab: "consider-tab"
+      tab: "consider-tab",
+      allItems: []
     };
     this.tab = this.tab.bind(this);
+    this.getAllDbItems = this.getAllDbItems.bind(this);
+  }
+
+ componentDidMount() {
+    this.getAllDbItems();
+    
+  }
+  getAllDbItems() {
+    axios.get('/api/items')
+    .then((response) => {
+      // handle success
+      this.setState({
+        allItems: response.data
+        // productName: response.data[0].itemName,
+        // imageLink: response.data[0].imageLink,
+        // cost: response.data[0].price
+      })
+      //console.log(response.data[0].imageLink);
+      //console.log(response.data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
   }
   tab(e){
     this.setState({tab: e.currentTarget.id});
   } 
   render() {
+
+
+     //Loading...
+  if( this.state.allItems[0] === undefined ) {
+    return <div>Loading...</div>
+}
+
+//Loaded successfully...
+   // console.log("coming from blah blah blah", this.state.allItems);
     return (
       
       <div>
@@ -32,15 +70,15 @@ export default class App extends Component {
            <h3>This item:</h3>
           </div>
 
-            <ItemInfo />
+            <ItemInfo firstItem={this.state.allItems[0]}/>
           </div>
           <div className="frequentlyBoughtTogether">
             <div className="frequentlyBoughtTogetherTitle">
               <h3>Frequently bought together</h3>
             </div>
-            <div className="itemInfoFrequentlyBoughtTogether1"><ItemInfoFrequentlyBoughtTogether /></div>
-            <div className="itemInfoFrequentlyBoughtTogether2"><ItemInfoFrequentlyBoughtTogether /></div>
-            <div className="itemInfoFrequentlyBoughtTogether3"><ItemInfoFrequentlyBoughtTogether /></div>
+            <ItemInfoFrequentlyBoughtTogether items={this.state.allItems}/>
+            {/* <div className="itemInfoFrequentlyBoughtTogether2"><ItemInfoFrequentlyBoughtTogether secondItem={this.state.allItems[2]}/></div>
+            <div className="itemInfoFrequentlyBoughtTogether3"><ItemInfoFrequentlyBoughtTogether secondItem={this.state.allItems[3]}/></div> */}
           </div>
           <div className="subtotal">
             <div className="subtotalDollarAmt">Subtotal: <b>$458.00</b> (4 items)</div>
