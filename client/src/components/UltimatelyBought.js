@@ -2,16 +2,7 @@ import React, { Component } from "react";
 import ItemInfoUltimatelyBought from '../components/ItemInfoUltimatelyBought';
 
 
-export default class UltimatelyBought extends Component {
-  constructor() {
-    super();
-    this.state = {
-      headerOne: "Frequently bought together",
-      productName: "productName",
-      cost: "costGoesHere"
-    };
-  }
-  render() {
+export default function UltimatelyBought() {
     return (
         <div>
               <div className="itemInfoUltimatelyBoughtDiv1"><ItemInfoUltimatelyBought /></div>
@@ -23,4 +14,3 @@ export default class UltimatelyBought extends Component {
         </div>
     );
   }
-}

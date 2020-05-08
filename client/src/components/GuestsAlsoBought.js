@@ -2,16 +2,7 @@ import React, { Component } from "react";
 import ItemInfoGuestsAlsoBought from '../components/ItemInfoGuestsAlsoBought';
 
 
-export default class GuestsAlsoBought extends Component {
-  constructor() {
-    super();
-    this.state = {
-      headerOne: "Frequently bought together",
-      productName: "productName",
-      cost: "costGoesHere"
-    };
-  }
-  render() {
+export default function GuestsAlsoBought() {
     return (
         <div>
               <div className="itemInfoGuestsAlsoBoughtDiv1"><ItemInfoGuestsAlsoBought /></div>
@@ -23,4 +14,3 @@ export default class GuestsAlsoBought extends Component {
         </div>
     );
   }
-}
