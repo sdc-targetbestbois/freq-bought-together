@@ -1,11 +1,13 @@
 const express = require('express');
 const path = require("path");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const port = 4000;
 const { getItems, getThisItem } = require('../database/query');
 
 const app = express();
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

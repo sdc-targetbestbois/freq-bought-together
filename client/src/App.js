@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ItemInfo from '../../client/src/components/ItemInfo.js';
 import ItemInfoFrequentlyBoughtTogether from "../../client/src/components/ItemInfoFrequentlyBoughtTogether.js";
-import Consider from "./components/Consider";
-import UltimatelyBought from "./components/UltimatelyBought";
-import GuestsAlsoBought from "./components/GuestsAlsoBought";
+import ItemInfoGuestsAlsoBought from "./components/ItemInfoGuestsAlsoBought.js";
+import ItemInfoRecommended from "./components/ItemInfoRecommended.js";
+import ItemInfoUltimatelyBought from "./components/ItemInfoUltimatelyBought.js";
 const axios = require('axios');
 
 
@@ -26,7 +26,7 @@ export default class App extends Component {
     
   }
   getAllDbItems() {
-    axios.get('/api/items')
+    axios.get('http://18.219.93.81/api/items')
     .then((response) => {
       // handle success
       this.setState({
@@ -54,7 +54,7 @@ export default class App extends Component {
 
      //Loading...
   if( this.state.allItems[0] === undefined ) {
-    return <div>Loading...</div>
+    return <div>Loading this...</div>
 }
 
 //Loaded successfully...
@@ -113,13 +113,13 @@ export default class App extends Component {
           <br></br>
           <div className="itemContainerHolder">
             <div className="inner" id="moreToConsider">
-              {this.state.tab === 'consider-tab' ? <Consider /> : null}
+              {this.state.tab === 'consider-tab' ? <ItemInfoRecommended itemsRec={this.state.allItems}/> : null}
             </div>
             <div className="inner" id="guestsUltimatelyBought">
-              {this.state.tab === 'ultimatelyBought-tab' ? <UltimatelyBought /> : null}
+              {this.state.tab === 'ultimatelyBought-tab' ? <ItemInfoUltimatelyBought itemsUlt={this.state.allItems}/> : null}
             </div>
             <div className="inner" id="guestsAlsoBought">
-              {this.state.tab === 'alsoBought-tab' ? <GuestsAlsoBought /> : null}
+              {this.state.tab === 'alsoBought-tab' ? <ItemInfoGuestsAlsoBought itemsAlsoBought={this.state.allItems}/> : null}
             </div>
           </div>
 

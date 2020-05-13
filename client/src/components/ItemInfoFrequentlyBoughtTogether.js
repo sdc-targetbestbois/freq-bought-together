@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 
 export default function ItemInfoFrequentlyBoughtTogetherList({items}) {
-  console.log({items})
+  // console.log({items})
     return (
       <div>
          <div className="itemInfoFrequentlyBoughtTogether1">

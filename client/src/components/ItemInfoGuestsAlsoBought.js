@@ -1,15 +1,37 @@
 import React, { Component } from "react";
 
 
-export default function ItemInfo() {
+export default function ItemInfoGuestsAlsoBought({itemsAlsoBought}) {
     return (
-      
-      <div id="itemInfoContainer">
-          <div className="productImageDiv"><img id="productImage" src="/images/crossbow.jpg" className="productImagePic" /></div>
-        <div className="productCost"><b>$249.00</b></div>
-        <div className="productName">One crossbow</div>
-        {/* <br></br>
-        <div className="checkboxDiv"><input type="checkbox" className="itemCheckbox"></input></div> */}
+      <div>
+        <div className="itemInfoGuestsAlsoBoughtDiv1">
+        <div id="itemInfoContainer">
+            <div className="productImageDiv"><img id="productImage" src={itemsAlsoBought[16].imageLink} className="productImagePic" /></div>
+          <div className="productCost"><b>{itemsAlsoBought[16].price} stirling</b></div>
+          <div className="productName">{itemsAlsoBought[16].itemName}</div>
+        </div>
+        </div>
+        <div className="itemInfoGuestsAlsoBoughtDiv2">
+        <div id="itemInfoContainer">
+            <div className="productImageDiv"><img id="productImage" src={itemsAlsoBought[17].imageLink} className="productImagePic" /></div>
+          <div className="productCost"><b>{itemsAlsoBought[17].price} stirling</b></div>
+          <div className="productName">{itemsAlsoBought[17].itemName}</div>
+        </div>
+        </div>
+        <div className="itemInfoGuestsAlsoBoughtDiv3">
+        <div id="itemInfoContainer">
+            <div className="productImageDiv"><img id="productImage" src={itemsAlsoBought[18].imageLink} className="productImagePic" /></div>
+          <div className="productCost"><b>{itemsAlsoBought[18].price} stirling</b></div>
+          <div className="productName">{itemsAlsoBought[18].itemName}</div>
+        </div>
+        </div>
+        <div className="itemInfoGuestsAlsoBoughtDiv4">
+        <div id="itemInfoContainer">
+            <div className="productImageDiv"><img id="productImage" src={itemsAlsoBought[19].imageLink} className="productImagePic" /></div>
+          <div className="productCost"><b>{itemsAlsoBought[19].price} stirling</b></div>
+          <div className="productName">{itemsAlsoBought[19].itemName}</div>
+        </div>
+        </div>
       </div>
     );
   }
