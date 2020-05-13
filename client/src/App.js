@@ -26,7 +26,7 @@ export default class App extends Component {
     
   }
   getAllDbItems() {
-    axios.get('/api/items')
+    axios.get('http://18.219.93.81/api/items')
     .then((response) => {
       // handle success
       this.setState({
@@ -54,7 +54,7 @@ export default class App extends Component {
 
      //Loading...
   if( this.state.allItems[0] === undefined ) {
-    return <div>Loading...</div>
+    return <div>Loading this...</div>
 }
 
 //Loaded successfully...
