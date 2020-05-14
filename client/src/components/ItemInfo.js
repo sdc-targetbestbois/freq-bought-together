@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-const axios = require('axios');
 
 
 export default function ItemInfo({firstItem}) {
-   // console.log({firstItem});
     return (
       
       <div id="itemInfoContainer">
