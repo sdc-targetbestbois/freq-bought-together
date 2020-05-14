@@ -1,5 +1,4 @@
 node_modules
-database/config.js
 .DS_Store
 .env
 # Elastic Beanstalk Files
