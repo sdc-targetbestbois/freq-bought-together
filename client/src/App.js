@@ -26,17 +26,13 @@ export default class App extends Component {
     
   }
   getAllDbItems() {
-    axios.get('http://18.219.93.81/api/items')
+    axios.get('/api/items')
     .then((response) => {
       // handle success
       this.setState({
         allItems: response.data
-        // productName: response.data[0].itemName,
-        // imageLink: response.data[0].imageLink,
-        // cost: response.data[0].price
+    
       })
-      //console.log(response.data[0].imageLink);
-      //console.log(response.data);
     })
     .catch(function (error) {
       // handle error
