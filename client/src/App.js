@@ -16,7 +16,8 @@ export default class App extends Component {
       cost: "costGoesHere",
       tab: "consider-tab",
       allItems: [],
-      current: []
+      current: [],
+      random: []
     };
     this.tab = this.tab.bind(this);
     this.getAllDbItems = this.getAllDbItems.bind(this);
@@ -28,7 +29,16 @@ export default class App extends Component {
     if (search) {
       search.addEventListener('submit', () => {
         let currentItem = this.state.allItems.filter(item => item.id === Number(search.name));
-        this.setState({current: currentItem[0]});
+        
+        let randomItems = [];
+        for (let i = 0; i < 20; i++) {
+          randomItems.push(this.state.allItems[Math.floor(Math.random() * 107)])
+        }
+
+        this.setState({
+          current: currentItem[0],
+          random: randomItems
+        });
       })
     }
   }
@@ -37,9 +47,15 @@ export default class App extends Component {
     axios.get('http://localhost:4000/api/items')
     .then((response) => {
       // handle success
+      let randomItems = [];
+      for (let i = 0; i < 20; i++) {
+        randomItems.push(response.data[Math.floor(Math.random() * 107)])
+      }
+
       this.setState({
         allItems: response.data,
-        current: response.data[0]
+        current: response.data[0],
+        random: randomItems
       })
     })
     .catch(function (error) {
@@ -80,7 +96,7 @@ export default class App extends Component {
             <div className="frequentlyBoughtTogetherTitle">
               <h3>Frequently bought together</h3>
             </div>
-            <ItemInfoFrequentlyBoughtTogether items={this.state.allItems}/>
+            <ItemInfoFrequentlyBoughtTogether items={this.state.random}/>
             {/* <div className="itemInfoFrequentlyBoughtTogether2"><ItemInfoFrequentlyBoughtTogether secondItem={this.state.allItems[2]}/></div>
             <div className="itemInfoFrequentlyBoughtTogether3"><ItemInfoFrequentlyBoughtTogether secondItem={this.state.allItems[3]}/></div> */}
           </div>
@@ -117,13 +133,13 @@ export default class App extends Component {
           <br></br>
           <div className="itemContainerHolder">
             <div className="inner" id="moreToConsider">
-              {this.state.tab === 'consider-tab' ? <ItemInfoRecommended itemsRec={this.state.allItems}/> : null}
+              {this.state.tab === 'consider-tab' ? <ItemInfoRecommended itemsRec={this.state.random}/> : null}
             </div>
             <div className="inner" id="guestsUltimatelyBought">
-              {this.state.tab === 'ultimatelyBought-tab' ? <ItemInfoUltimatelyBought itemsUlt={this.state.allItems}/> : null}
+              {this.state.tab === 'ultimatelyBought-tab' ? <ItemInfoUltimatelyBought itemsUlt={this.state.random}/> : null}
             </div>
             <div className="inner" id="guestsAlsoBought">
-              {this.state.tab === 'alsoBought-tab' ? <ItemInfoGuestsAlsoBought itemsAlsoBought={this.state.allItems}/> : null}
+              {this.state.tab === 'alsoBought-tab' ? <ItemInfoGuestsAlsoBought itemsAlsoBought={this.state.random}/> : null}
             </div>
           </div>
 
