@@ -15,7 +15,8 @@ export default class App extends Component {
       productName: "productName",
       cost: "costGoesHere",
       tab: "consider-tab",
-      allItems: []
+      allItems: [],
+      current: []
     };
     this.tab = this.tab.bind(this);
     this.getAllDbItems = this.getAllDbItems.bind(this);
@@ -23,15 +24,22 @@ export default class App extends Component {
 
  componentDidMount() {
     this.getAllDbItems();
-    
+    const search = document.getElementById('searchInputForm');
+    if (search) {
+      search.addEventListener('submit', () => {
+        let currentItem = allItems.filter(item => item.id === search.name);
+        this.setState({current: currentItem});
+      })
+    }
   }
+  
   getAllDbItems() {
     axios.get('/api/items')
     .then((response) => {
       // handle success
       this.setState({
-        allItems: response.data
-    
+        allItems: response.data,
+        current: response.data[0]
       })
     })
     .catch(function (error) {
@@ -66,7 +74,7 @@ export default class App extends Component {
            <h3>This item:</h3>
           </div>
 
-            <ItemInfo firstItem={this.state.allItems[0]}/>
+            <ItemInfo firstItem={this.state.current[0]}/>
           </div>
           <div className="frequentlyBoughtTogether">
             <div className="frequentlyBoughtTogetherTitle">
