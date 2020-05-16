@@ -33,7 +33,7 @@ export default class App extends Component {
         
         let randomItems = [];
         for (let i = 0; i < 22; i++) {
-          randomItems.push(this.state.allItems[Math.floor(Math.random() * 107)])
+          randomItems.push(this.state.allItems[Math.floor(Math.random() * 106)])
         }
         let subtotalMath = Math.floor(Math.random() * 450) + 100;
 
@@ -52,9 +52,9 @@ export default class App extends Component {
       // handle success
       let randomItems = [];
       for (let i = 0; i < 22; i++) {
-        randomItems.push(response.data[Math.floor(Math.random() * 107)])
+        randomItems.push(response.data[Math.floor(Math.random() * 106)])
       }
-
+      console.log("from axios get:", response);
       this.setState({
         allItems: response.data,
         current: response.data[0],
