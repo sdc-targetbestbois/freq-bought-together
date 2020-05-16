@@ -1,6 +1,7 @@
-.mainContainer {
-
-  display: inline-block;
+#mainContainer {
+  display: block;
+  max-width: 1120px;
+  margin: 0px auto;
   width: 1120px;
   height: 500px;
   /* border: solid; */

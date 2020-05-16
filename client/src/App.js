@@ -27,14 +27,14 @@ export default class App extends Component {
     const search = document.getElementById('searchInputForm');
     if (search) {
       search.addEventListener('submit', () => {
-        let currentItem = allItems.filter(item => item.id === search.name);
-        this.setState({current: currentItem});
+        let currentItem = this.state.allItems.filter(item => item.id === Number(search.name));
+        this.setState({current: currentItem[0]});
       })
     }
   }
   
   getAllDbItems() {
-    axios.get('/api/items')
+    axios.get('http://localhost:4000/api/items')
     .then((response) => {
       // handle success
       this.setState({
@@ -67,14 +67,14 @@ export default class App extends Component {
       
       <div>
         <center>
-        <div className="mainContainer">
+        <div id="mainContainer">
            <div className="thisItem">
 
           <div className="thisItemTitle">
            <h3>This item:</h3>
           </div>
 
-            <ItemInfo firstItem={this.state.current[0]}/>
+            <ItemInfo firstItem={this.state.current}/>
           </div>
           <div className="frequentlyBoughtTogether">
             <div className="frequentlyBoughtTogetherTitle">
