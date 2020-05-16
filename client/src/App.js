@@ -17,7 +17,8 @@ export default class App extends Component {
       tab: "consider-tab",
       allItems: [],
       current: [],
-      random: []
+      random: [],
+      subtotal: 0
     };
     this.tab = this.tab.bind(this);
     this.getAllDbItems = this.getAllDbItems.bind(this);
@@ -31,24 +32,26 @@ export default class App extends Component {
         let currentItem = this.state.allItems.filter(item => item.id === Number(search.name));
         
         let randomItems = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 22; i++) {
           randomItems.push(this.state.allItems[Math.floor(Math.random() * 107)])
         }
+        let subtotalMath = Math.floor(Math.random() * 450) + 100;
 
         this.setState({
           current: currentItem[0],
-          random: randomItems
+          random: randomItems,
+          subtotal: subtotalMath
         });
       })
     }
   }
   
   getAllDbItems() {
-    axios.get('http://localhost:4000/api/items')
+    axios.get('http://georgefecc-env.eba-qnkp2iqd.us-west-2.elasticbeanstalk.com/api/items')
     .then((response) => {
       // handle success
       let randomItems = [];
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 22; i++) {
         randomItems.push(response.data[Math.floor(Math.random() * 107)])
       }
 
@@ -101,7 +104,7 @@ export default class App extends Component {
             <div className="itemInfoFrequentlyBoughtTogether3"><ItemInfoFrequentlyBoughtTogether secondItem={this.state.allItems[3]}/></div> */}
           </div>
           <div className="subtotal">
-            <div className="subtotalDollarAmt">Subtotal: <b>$458.00</b> (4 items)</div>
+            <div className="subtotalDollarAmt">Subtotal: <b>${this.state.subtotal}.00</b> (4 items)</div>
             <button className="button addAllToCart">Add all 4 to cart</button>
           </div>
  

@@ -11,7 +11,7 @@ export default function ItemInfoFrequentlyBoughtTogetherList({items}) {
         <div className="productCostFrequentlyBoughtTogether"><b>{items[1].price} stirling</b></div>
         <div className="productNameFrequentlyBoughtTogether">{items[1].itemName}</div>
         <br></br>
-        <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox"></input></div>
+        <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox" checked></input></div>
       </div>
       </div>
 
@@ -21,7 +21,7 @@ export default function ItemInfoFrequentlyBoughtTogetherList({items}) {
           <div className="productCostFrequentlyBoughtTogether"><b>{items[2].price} stirling</b></div>
           <div className="productNameFrequentlyBoughtTogether">{items[2].itemName}</div>
           <br></br>
-          <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox"></input></div>
+          <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox" checked></input></div>
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export default function ItemInfoFrequentlyBoughtTogetherList({items}) {
         <div className="productCostFrequentlyBoughtTogether"><b>{items[3].price} stirling</b></div>
         <div className="productNameFrequentlyBoughtTogether">{items[3].itemName}</div>
         <br></br>
-        <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox"></input></div>
+        <div className="checkboxDivFrequentlyBoughtTogether"><input type="checkbox" className="itemCheckbox" checked></input></div>
         </div>
         </div>
         </div>
