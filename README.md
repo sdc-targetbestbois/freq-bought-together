@@ -3,7 +3,7 @@
 Our team built a Game of Thrones themed simulation of Target's item detail page, called Targaryen. Using a service oriented style, each service delivers the content & data for one module on the page.
 
 ## Demo
-![Targaryen1](./componentVideo1.mov)
+![Targaryen1](./componentVideo1.gif)
 ![Targaryen2](./Targaryen2.gif)
 
 ## Tech Stack
