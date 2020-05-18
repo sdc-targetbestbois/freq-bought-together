@@ -4,7 +4,6 @@ Our team built a Game of Thrones themed simulation of Target's item detail page,
 
 ## Demo
 ![Targaryen1](./componentVideo1.gif)
-![Targaryen2](./Targaryen2.gif)
 
 ## Tech Stack
 <table>
