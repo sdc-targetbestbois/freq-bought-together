@@ -9,7 +9,7 @@ export default function ItemInfo({firstItem}) {
         <div className="productCost"><b>{firstItem.price} stirling</b></div>
         <div className="productName">{firstItem.itemName}</div>
         <br></br>
-        <div className="checkboxDiv"><input type="checkbox" className="itemCheckbox" checked></input></div>
+        <div className="checkboxDiv"><input type="checkbox" className="itemCheckbox"></input></div>
       </div>
     );
   }

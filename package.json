@@ -1,5 +1,5 @@
 {
-  "name": "George-Component",
+  "name": "Tims-Component",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,10 +12,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Team-Target/Brian-Component.git"
-  },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-transform-runtime": "^7.9.6",
