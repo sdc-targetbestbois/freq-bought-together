@@ -24,7 +24,7 @@ export default class App extends Component {
     this.getAllDbItems = this.getAllDbItems.bind(this);
   }
 
- componentDidMount() {
+  componentDidMount() {
     this.getAllDbItems();
     const search = document.getElementById('searchInputForm');
     if (search) {
