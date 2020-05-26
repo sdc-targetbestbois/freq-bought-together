@@ -27,7 +27,7 @@ app.get('/api/items', (req, res) => {
 });
 
 app.post('/api2/new', (req, res) => {
-  getThisItem((err, data) => {
+  db.insertItem(req.query.id, (err, data) => {
     if (err) {
       console.log('problem creating an item from server');
       res.sendStatus(500);

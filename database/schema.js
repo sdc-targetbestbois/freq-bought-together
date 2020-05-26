@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const data = require('./data.csv');
 // const parsedData = JSON.parse(data);
-mongoose.connect("mongodb://localhost/sdc")
+mongoose.connect("mongodb+srv://application:application@cluster0.b4yi2.mongodb.net/sdc?retryWrites=true&w=majority")
     .then(() => {
         console.log('db connected');
     })
@@ -32,34 +32,21 @@ let itemSchema = mongoose.Schema({
         }
     }, 
     {
-        collection : 'test'
+        collection : 'items'
     });
 
 let MongoRep = mongoose.model('mongoRep', itemSchema);
 
-
-const insertData = (parsedData) => {
-    parsedData.forEach(data => {
-        let newparsedData = new MongoRep(data);
-        newparsedData.save((err) => {
-            if (err) {
-                return console.log('err saving repo to db', err);
-            }
-        })
-    })
-}
-// insertData(data);
-
 const insertItem = (item, cb) => {
-    let mongoRep = new MongoRep;
-    mongoRep.insert((err, result) => {
+    let newItem = new MongoRep(item);
+    newItem.save((err, result) => {
     if (err) {
         console.log('error inserting item');
         cb(err, null);
+    }else {
+        cb(null, result);
     }
-    console.log(result)
-    cb(null, result);
-    });
+    })
 }
 
 const relFind = (idR, cb) => {
@@ -85,6 +72,7 @@ const catRandFind = (categorySearch, cb, results) => {
         cb(null,results);
     })
 }
+
 module.exports = {
     insertItem,
     relFind,
