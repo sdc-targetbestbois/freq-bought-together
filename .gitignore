@@ -7,3 +7,4 @@ node_modules
 !.elasticbeanstalk/*.global.yml
 data.csv
 tempCodeRunnerFile.js
+newrelic_agent.log
