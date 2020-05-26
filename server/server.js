@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const port = 4000;
-const db = require('../database/query')
+const db = require('../database/schema.js')
 const newrelic = require('newrelic');
 const app = express();
 
@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //API 2.MONGO
 
-app.get('/api2/:find', (req, res) => {
-  db.findOne(req.params, (err, data) => {
+app.get('/api/items', (req, res) => {
+  db.relFind(req.query.id, (err, data) => {
     if (err) {
       console.log('problem finding item from server');
       res.sendStatus(500);
@@ -58,6 +58,7 @@ app.delete('/api2/erase', (req, res) => {
     }
   });
 });
+
 app.listen(port, function() {
   console.log('listening on port 4000');
 });

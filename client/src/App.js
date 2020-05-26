@@ -16,58 +16,54 @@ export default class App extends Component {
       cost: "costGoesHere",
       tab: "consider-tab",
       allItems: [],
-      current: [],
+      current: [100],
       random: [],
       subtotal: 0
     };
     this.tab = this.tab.bind(this);
-    this.getAllDbItems = this.getAllDbItems.bind(this);
+    this.getDbItems = this.getDbItems.bind(this);
   }
 
   componentDidMount() {
-    this.getAllDbItems();
+    this.getDbItems();
     const search = document.getElementById('searchInputForm');
-    if (search) {
-      search.addEventListener('submit', () => {
-        let currentItem = this.state.allItems.filter(item => item.id === Number(search.name));
+    // if (search) {
+    //   search.addEventListener('submit', () => {
+    //     let currentItem = this.state.allItems.filter(item => item.id === Number(search.name));
         
-        let randomItems = [];
-        for (let i = 0; i < 22; i++) {
-          randomItems.push(this.state.allItems[Math.floor(Math.random() * 106)])
-        }
-        let subtotalMath = Math.floor(Math.random() * 450) + 100;
+    //     let randomItems = [];
+    //     for (let i = 0; i < 22; i++) {
+    //       randomItems.push(this.state.allItems[Math.floor(Math.random() * 106)])
+    //     }
+    //     let subtotalMath = Math.floor(Math.random() * 450) + 100;
 
-        this.setState({
-          current: currentItem[0],
-          random: randomItems,
-          subtotal: subtotalMath
-        });
-      })
-    }
+    //     this.setState({
+    //       current: currentItem[0],
+    //       random: randomItems,
+    //       subtotal: subtotalMath
+    //     });
+    //   })
+    // }
   }
   
-  getAllDbItems() {
-    axios.get('http://georgefecc-env.eba-qnkp2iqd.us-west-2.elasticbeanstalk.com/api/items')
-    .then((response) => {
-      // handle success
-      let randomItems = [];
-      for (let i = 0; i < 22; i++) {
-        randomItems.push(response.data[Math.floor(Math.random() * 106)])
+  getDbItems() {
+    axios.get('/api/items', {
+      params: {
+        id : this.state.current[0]
       }
-      console.log("from axios get:", response);
+    })
+
+    .then((response) => {
       this.setState({
         allItems: response.data,
         current: response.data[0],
-        random: randomItems
+        random: response.data[1]
       })
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     })
-    .then(function () {
-      // always executed
-    });
   }
   tab(e){
     this.setState({tab: e.currentTarget.id});

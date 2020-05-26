@@ -1,4 +1,4 @@
-const itemSchema = require('./schema').itemSchema;
+const itemSchema = require('./schema');
 
 const insertItem = (item, cb) => {
   let mongo = new itemSchema(item);
