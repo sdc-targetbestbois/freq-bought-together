@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "acorn": "^7.1.1",
+    "artillery": "^1.6.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.3.7",
@@ -45,6 +46,7 @@
     "react-bootstrap": "1.0.1",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
+    "request": "^2.88.2",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0"
   }
