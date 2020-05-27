@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const data = require('./data.csv');
 // const parsedData = JSON.parse(data);
-mongoose.connect("mongodb+srv://application:application@cluster0.b4yi2.mongodb.net/sdc?retryWrites=true&w=majority")
+mongoose.connect("http://ec2-3-15-233-166.us-east-2.compute.amazonaws.com:27017")
     .then(() => {
         console.log('db connected');
     })
