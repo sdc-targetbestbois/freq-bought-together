@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 // const data = require('./data.csv');
 // const parsedData = JSON.parse(data);
-mongoose.connect("http://ec2-3-15-233-166.us-east-2.compute.amazonaws.com:27017")
+mongoose.connect("mongodb://application:application@localhost:27017/sdc")
     .then(() => {
         console.log('db connected');
     })
-    .catch(() => {
-        console.log('error connecting to db');
+    .catch((err) => {
+        console.log('error connecting to db',err);
     })
 
 let itemSchema = mongoose.Schema({
