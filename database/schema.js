@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-// const data = require('./data.csv');
-// const parsedData = JSON.parse(data);
-mongoose.connect("mongodb://application:application@localhost:27017/sdc")
+const mongoConfig = require('mongoConfig')
+mongoose.connect(`${mongoConfig}`)
     .then(() => {
         console.log('db connected');
     })
@@ -77,3 +76,11 @@ module.exports = {
     insertItem,
     relFind,
 };
+
+// db.createUser(
+//     {
+//     user: "application",
+//     pwd: "application",
+//     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+//     }
+//     )
