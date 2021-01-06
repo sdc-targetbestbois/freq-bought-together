@@ -28,7 +28,7 @@
   "dependencies": {
     "acorn": "^7.1.1",
     "artillery": "^1.6.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.3.7",
     "chance": "^1.1.5",
